@@ -8,16 +8,25 @@
 
 Contains a templated math library for all the different easing equations
 used in the ActionSystem.
+
+The math used in the equations was found thanks to: http://gizma.com/easing/
 */
 /****************************************************************************/
 
 #pragma once
+#include "math.h"
 //Easing functions
 //Linear
 namespace ActionSystem
 {
     namespace Math
     {
+        //This is Pi. Their are many Pi's like it but this one is mine.
+        namespace
+        {
+            const long double Pi = 3.141592653589793238462643383279502884L;
+        }
+
         template < typename T >
         T Linear(long double currentTime, const T& startValue, const T& endValue, long double duration)
         {
@@ -59,6 +68,90 @@ namespace ActionSystem
 
             currentTime -= 1;
             return static_cast<T>( (change * -1) / 2 * (currentTime * (currentTime - 2) - 1) + startValue);
+        }
+        
+        //Sinusoidal
+        template < typename T >
+        T SinIn(long double currentTime, const T& startValue, const T& endValue, long double duration)
+        {
+            T change = endValue - startValue;
+            
+            return static_cast<T>((change * -1) * cos(currentTime / duration * (Pi / 2)) + change + startValue);
+        }
+        template < typename T >
+        T SinOut(long double currentTime, const T& startValue, const T& endValue, long double duration)
+        {
+            T change = endValue - startValue;
+            
+            return static_cast<T>(change * sin(currentTime / duration * (Pi / 2)) + startValue);
+        }
+        template < typename T >
+        T SinInOut(long double currentTime, const T& startValue, const T& endValue, long double duration)
+        {
+            T change = endValue - startValue;
+            
+            return static_cast<T>((change * -0.5) * (cos(Pi * currentTime / duration) - 1) + startValue);
+        }
+
+        //Exponential
+        template < typename T >
+        T ExpoIn(long double currentTime, const T& startValue, const T& endValue, long double duration)
+        {
+            T change = endValue - startValue;
+
+            return static_cast<T>(change * pow(2, 10 * (currentTime / duration - 1)) + startValue);
+        }
+        template < typename T >
+        T ExpoOut(long double currentTime, const T& startValue, const T& endValue, long double duration)
+        {
+            T change = endValue - startValue;
+            
+            return static_cast<T>(change * (-pow(2, -10 * currentTime / duration) + 1) + startValue);
+        }
+        template < typename T >
+        T ExpoInOut(long double currentTime, const T& startValue, const T& endValue, long double duration)
+        {
+            T change = endValue - startValue;
+            currentTime /= duration / 2;
+            if (currentTime < 1)
+            {
+                return change / 2 * pow(2, 10 * (currentTime - 1)) + startValue;
+            }
+            --currentTime;
+
+            return static_cast<T>(change/2 * (-pow(2, -10 * currentTime) + 2) + startValue);
+        }
+
+        //Circular
+        template < typename T >
+        T CircIn(long double currentTime, const T& startValue, const T& endValue, long double duration)
+        {
+            T change = endValue - startValue;
+            currentTime /= duration;
+
+            return static_cast<T>((change * -1) * (sqrt(1 - currentTime*currentTime) - 1) + startValue);
+        }
+        template < typename T >
+        T CircOut(long double currentTime, const T& startValue, const T& endValue, long double duration)
+        {
+            T change = endValue - startValue;
+            currentTime /= duration;
+            --currentTime;
+
+            return static_cast<T>(change * sqrt(1 - currentTime * currentTime) + startValue);
+        }
+        template < typename T >
+        T CircInOut(long double currentTime, const T& startValue, const T& endValue, long double duration)
+        {
+            T change = endValue - startValue;
+            currentTime /= duration / 2;
+            if (currentTime < 1)
+            {
+                return (change * -1) / 2 * (sqrt(1 - currentTime * currentTime) - 1) + startValue;
+            }
+            currentTime -= 2;
+
+            return static_cast<T>(change / 2 * (sqrt(1 - currentTime * currentTime) + 1) + startValue);
         }
 
         //Cubic
@@ -168,23 +261,14 @@ namespace ActionSystem
         QuadIn,
         QuadInOut,
         QuadOut,
-        //Not Yet Implemented
         SinIn,
-        //Not Yet Implemented
         SinInOut,
-        //Not Yet Implemented
         SinOut,
-        //Not Yet Implemented
         ExpoIn,
-        //Not Yet Implemented
         ExpoInOut,
-        //Not Yet Implemented
         ExpoOut,
-        //Not Yet Implemented
         CircIn,
-        //Not Yet Implemented
         CircInOut,
-        //Not Yet Implemented
         CircOut,
         CubicIn,
         CubicInOut,

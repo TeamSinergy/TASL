@@ -124,7 +124,6 @@ int main()
         std::cout << "@" << std::endl;
     } while (currentTime <= endTime);*/
     ActionSystem::ActionGroup grp;
-
     ActionSystem::ActionSequence& seq = ActionSystem::Action::Sequence(grp);
     ActionSystem::Action::Property(seq, &startInt2, endInt2, endTime, ActionSystem::Ease::QuadInOut);
     ActionSystem::Action::Delay(seq, 0.5);

@@ -28,20 +28,19 @@ namespace ActionSystem
         {
             switch (ease)
             {
-                //case Ease::CircIn:
-                //{
-                //    //Not yet implemented.
-                //    
-                //}break;
-                //case Ease::CircInOut:
-                //{
-                //    //Not yet implemented.
-                //    ;
-                //}break;
-                //case Ease::CircOut:
-                //{
-
-                //}break;
+                case Ease::CircIn:
+                {
+                    Sample = &Math::CircIn<T>;
+                    
+                }break;
+                case Ease::CircInOut:
+                {
+                    Sample = &Math::CircInOut<T>;
+                }break;
+                case Ease::CircOut:
+                {
+                    Sample = &Math::CircOut<T>;
+                }break;
                 case Ease::CubicIn:
                 {
                     Sample = &Math::CubicIn<T>;
@@ -54,18 +53,18 @@ namespace ActionSystem
                 {
                     Sample = &Math::CubicOut<T>;
                 }break;
-                /*case Ease::ExpoIn:
+                case Ease::ExpoIn:
                 {
-
+                    Sample = &Math::ExpoIn<T>;
                 }break;
                 case Ease::ExpoInOut:
                 {
-
+                    Sample = &Math::ExpoInOut<T>;
                 }break;
                 case Ease::ExpoOut:
                 {
-
-                }break;*/
+                    Sample = &Math::ExpoOut<T>;
+                }break;
                 case Ease::Linear:
                 {
                     Sample = &Math::Linear<T>;
@@ -105,6 +104,18 @@ namespace ActionSystem
                 case Ease::QuarticOut:
                 {
                     Sample = &Math::QuarticOut<T>;
+                }break;
+                case Ease::SinIn:
+                {
+                    Sample = &Math::SinIn<T>;
+                }break;
+                case Ease::SinInOut:
+                {
+                    Sample = &Math::SinInOut<T>;
+                }break;
+                case Ease::SinOut:
+                {
+                    Sample = &Math::SinOut<T>;
                 }break;
                 default:
                 {
