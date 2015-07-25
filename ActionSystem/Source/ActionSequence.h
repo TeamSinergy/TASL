@@ -8,6 +8,8 @@
 
 The ActionSequence contains a list of other actions (Properties, Groups, Calls,
 Sequences, etc.) that are put into a queue and run one after the other.
+
+© 2015 Joshua Biggs CC Attribution
 */
 /****************************************************************************/
 #pragma once

@@ -8,6 +8,8 @@
 
 Contains an action system that allows the user to interpolate between two
 values over a specified duration of time.
+
+© 2015 Joshua Biggs CC Attribution
 */
 /****************************************************************************/
 #pragma once
@@ -22,6 +24,7 @@ namespace ActionSystem
     {
         
     public:
+        //I have the value passed in by pointer to make it clear that this value IS going to change.
         ActionProperty(T* startVal, const T& endVal, const long double& duration,const Ease& ease) :
             StartVal(*startVal), EndVal(endVal), CurrentVal(startVal), EndTime(duration),
             EasingCurve(SampleCurve<T>(ease))

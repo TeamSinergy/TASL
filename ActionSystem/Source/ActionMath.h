@@ -10,6 +10,8 @@ Contains a templated math library for all the different easing equations
 used in the ActionSystem.
 
 The math used in the equations was found thanks to: http://gizma.com/easing/
+
+© 2015 Joshua Biggs CC Attribution
 */
 /****************************************************************************/
 

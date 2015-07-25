@@ -9,6 +9,8 @@
 Contains the declaration for the ActionCall class. An action call simply
 calls a function when it is updated. The functions can be static, global, or 
 even member functions.
+
+© 2015 Joshua Biggs CC Attribution
 */
 /****************************************************************************/
 #pragma once

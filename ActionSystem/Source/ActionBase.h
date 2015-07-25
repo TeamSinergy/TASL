@@ -8,6 +8,8 @@
 
 Contains the base ActionBase class that all derivitive action types inherit from.
 All actions can be Paused, Resumed, Completed, and Restarted.
+
+© 2015 Joshua Biggs CC Attribution
 */
 /****************************************************************************/
 #pragma once

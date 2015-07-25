@@ -3,11 +3,13 @@
 \file   SampleCurve.h
 \author Joshua Biggs
 \par    email: Joshua.B@Digipen.edu
-\par    Course: GAM 255
+\par    Developed: Summer 2015
 \brief
 
 Contains a SampleCurve class used to add eases to an Action/Interpolation.
 The user can also specify their own custom easing function if they so wish.
+
+© 2015 Joshua Biggs CC Attribution
 */
 /****************************************************************************/
 #pragma once

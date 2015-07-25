@@ -9,6 +9,8 @@
 The ActionGroup class stores a group of actions which are all updated at the
 same time. When all of the stored actions are complete, the group completes.
 Groups can be placed inside of sequences.
+
+© 2015 Joshua Biggs CC Attribution
 */
 /****************************************************************************/
 #include "ActionGroup.h"

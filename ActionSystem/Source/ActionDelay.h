@@ -8,6 +8,8 @@
 
 The ActionDelay class simply waits for the specified amount of time. Mainly 
 useful in action sequences.
+
+© 2015 Joshua Biggs CC Attribution
 */
 /****************************************************************************/
 #pragma once

@@ -9,6 +9,8 @@
 This file is the only thing another file needs to include in order to use 
 the Action system. It contains a namespace of inline functions that can be
 called to make using the action system simpler.
+
+© 2015 Joshua Biggs CC Attribution
 */
 /****************************************************************************/
 #pragma once

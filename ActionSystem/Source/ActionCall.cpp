@@ -8,6 +8,8 @@
 
 Contains the implementation for the ActionCall class. An action call simply
 calls a function when it is updated.
+
+© 2015 Joshua Biggs CC Attribution
 */
 /****************************************************************************/
 #include "ActionCall.h"
