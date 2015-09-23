@@ -15,7 +15,7 @@ The math used in the equations was found thanks to: http://gizma.com/easing/
 */
 /****************************************************************************/
 
-#pragma once
+
 #include "math.h"
 //Easing functions
 //Linear

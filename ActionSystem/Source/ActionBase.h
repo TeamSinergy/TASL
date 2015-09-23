@@ -27,7 +27,7 @@ namespace ActionSystem
 
             //I have Update as a virtual function in order to make adding new action types
             //incredibly simple. I believe the added flexibility heavily outweighs the extra overhead.
-            virtual void Update(const long double& dt){};
+            virtual void Update(const long double& dt) = 0;
             //Restart is virtual in the case that the user wants to ake their own custom 
             //derived Action class with different restart functionality.
             virtual void Restart(){ Completed = false; }
