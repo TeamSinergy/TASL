@@ -1,7 +1,7 @@
 # ActionSystem - TASL
 A C++ templated Action System that can be used for animations and other sorts of interpolations over time. Supports 22 different types of eases.
 
-To get started, simply download the project include and 'ActionSystem.h'.
+To get started, simply download the project and include 'ActionSystem.h'.
 
 The ActionSystem Library contains the following features:
 
