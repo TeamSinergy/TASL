@@ -21,7 +21,7 @@ The math used in the equations was found thanks to: http://gizma.com/easing/
 //Linear
 namespace ActionSystem
 {
-    namespace Math
+    namespace ActionMath
     {
         //This is Pi. Their are many Pi's like it but this one is mine.
         namespace
